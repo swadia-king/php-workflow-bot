@@ -1,4 +1,4 @@
-name: php-test
+name: rrb-ntpc-graduate-job
 
 on:
   workflow_dispatch: # Allows you to trigger the job manually from the GitHub UI
@@ -11,6 +11,6 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: check php
+      - name: run ntpc graduate check script
         run: |
           php ntpc-06-2025.php
