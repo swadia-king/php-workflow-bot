@@ -45,6 +45,7 @@ foreach ($nodes as $node) {
     $date = $span ? trim($span->textContent) : "";
     if ($date !== $yesterday) {
     	echo "today : $yesterday and post_date : $date\n";
+        continue;
     }
     echo "Title : $title\n";
     echo "Href  : $href\n";
