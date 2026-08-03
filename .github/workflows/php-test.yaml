@@ -13,4 +13,4 @@ jobs:
 
       - name: check php
         run: |
-          php -v
+          php ntpc-06-2025.php
