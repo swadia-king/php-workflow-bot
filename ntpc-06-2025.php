@@ -44,7 +44,7 @@ foreach ($nodes as $node) {
     $span = $xpath->query("./span[1]", $node)->item(0);
     $date = $span ? trim($span->textContent) : "";
     if ($date !== $yesterday) {
-    	echo "today : $yeasterday and post_date : $date\n";
+    	echo "today : $yesterday and post_date : $date\n";
     }
     echo "Title : $title\n";
     echo "Href  : $href\n";
