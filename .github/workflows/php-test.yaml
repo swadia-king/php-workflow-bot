@@ -4,13 +4,13 @@ on:
   workflow_dispatch: # Allows you to trigger the job manually from the GitHub UI
 
 jobs:
-  rclone-job:
+  php-test-job:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Install Rclone
+      - name: check php
         run: |
           php -v
