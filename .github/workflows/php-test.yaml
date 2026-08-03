@@ -1,7 +1,9 @@
 name: rrb-ntpc-graduate-job
 
 on:
-  workflow_dispatch: # Allows you to trigger the job manually from the GitHub UI
+  schedule:
+    - cron: '30 23 * * *'
+  workflow_dispatch:
 
 jobs:
   php-test-job:
