@@ -51,4 +51,29 @@ foreach ($nodes as $node) {
     echo "Href  : $href\n";
     echo "Date  : $date\n";
     echo "-------------------------\n";
+
+    $ch = curl_init("https://ntfy.sh/ntpc-graduate-rrbahmedabad-06-2025");
+    $message = "Href  : $href\n";
+    $message .= "Date  : $date";    
+    curl_setopt_array($ch, [
+        CURLOPT_POST => true,
+        CURLOPT_POSTFIELDS => $message,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_HTTPHEADER => [
+            "Title: $title",
+            "Priority: default",
+            "Tags: newspaper"
+        ]
+    ]);
+    
+    $response = curl_exec($ch);
+    
+    if (curl_errno($ch)) {
+        echo "cURL Error: " . curl_error($ch);
+    } else {
+        echo "Notification sent!\n";
+    }
+    
+    curl_close($ch);    
+
 }
